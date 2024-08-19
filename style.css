@@ -19,7 +19,7 @@ a {
 }
 
 .bg {
-  background-image: url(/Landing_Page/bg.png);
+  background-image: url(bg.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
