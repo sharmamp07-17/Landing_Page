@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=New+Amsterdam&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Copy-Landing Page</title>
+</head>
+
+<body>
+  <div class="container bg">
+    <div class="main">
+
+      <nav>
+        <div class="logo">Coffee</div>
+        <div class="links">
+          <a href="#">About</a>
+          <a href="#">Membership</a>
+          <a href="#">Events</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="sign-in" id="sign-btn">Sign In</div>
+        <div class="bars" id="menu">
+          <i class="fa-solid fa-bars" id="barlogo"></i>
+        </div>
+      </nav>
+
+      <section>
+        <div class="center">
+
+          <div class="left">
+            <div class="social-media">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-twitter"></i>
+            </div>
+
+            <div class="content">
+              <span>#Coffee for hot days</span>
+              <h1>Cold Brew</h1>
+              <p>Boots your productivity and buid your mood with a glass of coffee in the morming. Coffee has a
+                stimulating
+                effect.</p>
+              <div class="order">
+                <button>Order Now</button>
+                <h3>$16.80 |</h3>
+                <span>Regular Price</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <img src="/Landing_Page/hero.png" alt="Coffee_Pics">
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    const barLogo = document.getElementById('barlogo');
+    const SignButton = document.getElementById('sign-btn');
+    const imgAnimi = document.querySelector("img");
+    const menu = document.getElementById('menu');
+    const links = document.querySelector('.links');
+    // menu.addEventListener('click', () => {
+    //   links.classList.toggle('navbar');
+    //   imgAnimi.style.animation = "step-end"
+    // });
+    menu.addEventListener('click', () => {
+      if (barLogo.classList.contains('fa-bars')) {
+        barLogo.classList.remove('fa-bars');
+        barLogo.classList.add('fa-times');
+        links.classList.add('navbar');
+        SignButton.classList.add('signbtn');
+        imgAnimi.style.animation = "step-end"
+        imgAnimi.style.animationPlayState = "paused"
+      }
+      else if (barLogo.classList.contains('fa-times')) {
+        barLogo.classList.remove('fa-times');
+        barLogo.classList.add('fa-bars');
+        links.classList.remove('navbar');
+        SignButton.classList.remove('signbtn');
+        imgAnimi.style.animation = "fading ease 3s infinite"
+        imgAnimi.style.animationPlayState = "running";
+      }
+    });
+  </script>
+</body>
+
+</html>
